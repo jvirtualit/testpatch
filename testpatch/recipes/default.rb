@@ -4,5 +4,5 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 execute 'update_packages' do
- command 'yum update all -y'
+  command 'sudo /usr/bin/yum update all -y'
 end
