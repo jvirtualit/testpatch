@@ -3,6 +3,10 @@
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
-execute 'update_packages' do
-  command 'sudo /usr/bin/yum update all -y'
+bash 'update_patches' do
+  cwd ::File.dirname(src_filepath)
+  code <<-EOH
+    echo `date` >> /tmp/executed.log
+    sudo yum update all -y
+    EOH
 end
